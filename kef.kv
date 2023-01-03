@@ -1,7 +1,15 @@
 #:kivy 1.0.9
 
 <KefMain>:
-    Button
+	canvas:
+		Color: 
+			rgba: (0, .3, 1, .7)
+		Rectangle: 
+			size: self.size
+			pos: self.pos
+
+    Button:
+		id: _kbtn
         on_press: root.kspawn()
         text: "Kela"
         size: 10, 10
@@ -9,9 +17,21 @@
         pos_hint: {'center_x': .5, 'center_y': .7}
 
     Button:
+		id: _fbtn
         on_press: root.fspawn()
         text: "Fuck"
         size: 10,10
         size_hint: .3, .2
         pos_hint: {'center_x': .5, 'center_y': .3}
+	
+	Label:
+		text: '{}'.format(self.parent.kscore)
+		size: (5, 5)
+		pos: ( _kbtn.width / 2, 50)
+	
+	Label: 
+		text: '{}'.format(self.parent.fscore)
+		size: (5, 5)
+		pos: ( - _kbtn.width / 2, -50)
+	
 
