@@ -1,0 +1,17 @@
+#:kivy 1.0.9
+
+<KefMain>:
+    Button
+        on_press: root.kspawn()
+        text: "Kela"
+        size: 10, 10
+        size_hint: .3, .2
+        pos_hint: {'center_x': .5, 'center_y': .7}
+
+    Button:
+        on_press: root.fspawn()
+        text: "Fuck"
+        size: 10,10
+        size_hint: .3, .2
+        pos_hint: {'center_x': .5, 'center_y': .3}
+
